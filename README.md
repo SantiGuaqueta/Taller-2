@@ -267,3 +267,73 @@ print("Raíz cúbica del menor número:" +str(raizCubica)) #imprime la raiz
 ```
 
 10. Desarrollar un algoritmo que determine si una matriz es mágica. Se dice que una matriz cuadrada es mágica si la suma de cada una de sus filas, de cada una de sus columnas y de cada diagonal es igual.
+
+##### Solucion
+
+``` python
+# Ejercicio 10
+# Desarrollar un algoritmo que determine si una matriz es mágica.
+# Se dice que una matriz cuadrada es mágica si la suma de cada una de sus filas,
+# de cada una de sus columnas y de cada diagonal es igual.
+
+
+list1 = [] #creamos una lista vacia
+B = [] #creamos una lista vacia
+
+for i in range(3): #limitamos las filas a 3
+    for j in range(3): #limitamos las columnas a 3
+        num = float(input("ingrese los valores de los elementos de su matriz: ")) #pedimos los elementos de la matriz
+        list1.append(num) #añadimos los elementos a la lista 1
+    B.append(list1) #añadimos los elementos a la lista B
+    list1 = []
+print(B) #imprimimos B
+
+def magic(B:float):#definimos la suma rotativa
+    a = B[0][0] #escribimos las posiciones de los elementos que deseamos sumar
+    b = B[1][0]
+    c = B[2][0]
+
+    d = B[0][1]
+    e = B[1][1]
+    f = B[2][1]
+
+    g = B[0][2]
+    h = B[1][2]
+    i = B[2][2]
+
+    a1 = B[0][0] #escribimos las posiciones de los elementos que deseamos sumar
+    b1 = B[0][1]
+    c1 = B[0][2]
+
+    d1 = B[1][0]
+    e1 = B[1][1]
+    f1 = B[1][2]
+
+    g1 = B[2][0]
+    h1 = B[2][1]
+    i1 = B[2][2]
+    
+    a2 = B[0][0] #escribimos las posiciones de los elementos que deseamos sumar
+    b2 = B[1][1]
+    c2 = B[2][2]    
+    
+    d2 = B[0][2]
+    e2 = B[1][1]
+    f2 = B[2][0]
+
+    suma1 = a + b + c#realizamos las sumas de las columnas
+    suma2 = d + e + f
+    suma3 = g + h + i
+    suma4 = a1 + b1 + c1 #realizamos las sumas de las columnas
+    suma5 = d1 + e1 + f1
+    suma6 = g1 + h1 + i1
+    suma7 = a2 + b2 + c2 #realizamos las sumas de las columnas
+    suma8 = d2 + e2 + f2
+
+    if suma1 == suma2 == suma3 == suma4 == suma5 == suma6 == suma7 == suma8:
+        print("su matriz es magica: ")
+    else:
+        print("tu matriz no es magica")
+
+magic(B)
+``` 
